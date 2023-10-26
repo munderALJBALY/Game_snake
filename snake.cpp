@@ -1,6 +1,3 @@
-/*
-new comments for test
-*/
 
 #include <iostream>
 #include <Windows.h>
